@@ -25,3 +25,23 @@
     font-family: 'Ubuntu', sans-serif;
     padding: 0px .5rem;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5){
+
+    .navBar .brandTitle a {
+        font-size: 1rem;
+    }
+    .navBar .link a{
+        font-size: .8rem;
+    }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.25){
+
+    .navBar .brandTitle a {
+        font-size: 1.5rem;
+    }
+
+}
+
