@@ -1,9 +1,8 @@
 .navBar{
-    height: 3.5rem;
+    height: 8vh;
     display: flex;
     align-items: center;
     padding: 0px  2rem;
-    background-color: #EEEEEE;
     justify-content: space-between;
 
 }
@@ -14,8 +13,9 @@
     font-weight: 700;
     color: #393E46;
     text-decoration: none;
-    font-family: 'lora', serif;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
+    text-transform: uppercase;
 }
 .navBar .link a{
     font-size: 1rem;
