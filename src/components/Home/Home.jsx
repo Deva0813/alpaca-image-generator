@@ -103,7 +103,7 @@ const Home = () => {
 									return (
 										<img
 											key={index}
-											src={"/images/alpaca/" + key + "/" + defaultImg[key]}
+											src={"/alpaca-image-generator/images/alpaca/" + key + "/" + defaultImg[key]}
 											alt={key}
 										/>
 									);
