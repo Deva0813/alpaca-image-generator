@@ -4,7 +4,7 @@
 Its a simple image generator that uses the collection of images to generate images of alpacas.
 
 ## Demo
-![Demo](https://deva0813.github.io/alpaca-image-generator/)
+The demo of the project can be found [here](https://deva0813.github.io/alpaca-image-generator/).
 
 ## Installation
 1. Clone the repository
