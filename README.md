@@ -8,6 +8,9 @@ The demo of the project can be found [here](https://deva0813.github.io/alpaca-im
 
 ## Installation
 1. Clone the repository
+```bash
+git clone https://github.com/Deva0813/alpaca-image-generator.git
+```
 2. Install the dependencies
 ```bash
 npm install
