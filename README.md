@@ -1,8 +1,23 @@
-# React + Vite
+# Alpaca Image Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Its a simple image generator that uses the collection of images to generate images of alpacas.
 
-Currently, two official plugins are available:
+## Demo
+![Demo](https://deva0813.github.io/alpaca-image-generator/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+1. Clone the repository
+2. Install the dependencies
+```bash
+npm install
+```
+3. Run the server
+```bash
+npm run dev
+```
+4. Open the browser and go to http://localhost:3000
+
+## Usage
+1. Click on the generate button to generate a random alpaca image.
+2. Click on the download button to download the generated image.
