@@ -1,0 +1,27 @@
+.navBar{
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0px  2rem;
+    background-color: #EEEEEE;
+    justify-content: space-between;
+
+}
+
+
+.navBar .brandTitle a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #393E46;
+    text-decoration: none;
+    font-family: 'lora', serif;
+    text-decoration: none;
+}
+.navBar .link a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #393E46;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0px .5rem;
+}
