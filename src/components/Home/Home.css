@@ -15,14 +15,14 @@
 }
 
 .leftDiv{
-    flex: 1;
+    flex: auto;
     display: grid;
     place-content: center;
 }
 
 .rightDiv{
-    padding-left: 3rem;
-    flex: 1;
+    padding-left: 5rem;
+    flex: auto;
 }
 
 .leftDiv .cont {
@@ -44,11 +44,13 @@ h1 {
     width: 35rem;
     height: 35rem;
     position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
 .rightDiv p{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.5;
     color: #333;
@@ -67,9 +69,32 @@ h1 {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     margin: .25rem;
+    font-size: 1rem;
 }
 
 .rightDiv .options button:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+.download .options button:nth-child(1){
+    background-color: #64CCC5;
+    color: #001C30;
+    border: none;
+}
+
+.download .options button:nth-child(1):hover{
+    background-color: #333;
+    color: #fff;
+}
+
+.download .options button:nth-child(2){
+    background-color: #A2FF86;
+    color: #004b1d;
+    border: none;
+}
+
+.download .options button:nth-child(2):hover{
     background-color: #333;
     color: #fff;
 }
@@ -107,16 +132,49 @@ h1 {
     position: relative;
     transition: all 0.3s ease-in-out;
   }
+
+    .rightDiv .cont{
+        width: 35rem;
+    }
+
+    .rightDiv{
+        padding-left: 3rem;
+    }
+
+    button{
+        font-size: .8rem !important;
+    }
+
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+
+    .outer{
+        margin-top:-5%;
+    }
     .imgDiv{
       width: 22rem;
       height: 22rem;
       position: relative;
       transition: all 0.3s ease-in-out;
     }
-    .rightDiv{
-        scale: 0.8;
+    .rightDiv .cont{
+        width: 30rem;
     }
+
+    .rightDiv{
+        padding-left: 2rem;
+    }
+    .rightDiv p{
+        font-size: .75rem;
+    }
+
+    button{
+        font-size: .625rem !important;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
   }

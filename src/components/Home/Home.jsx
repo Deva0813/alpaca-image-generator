@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Home.css";
 import dataDir from "../../assets/data/dataDir";
+import html2canvas from "html2canvas";
 
 const Home = () => {
 	const [data] = useState(dataDir);
 	const [selected, setSelected] = useState("");
-	const [selectedStyle, setSelectedStyle] = useState("");
 
 	const [defaultImg, setDefaultImg] = useState({
 		backgrounds: "blue60.png",
@@ -49,13 +49,46 @@ const Home = () => {
 	};
 
 	const handleStyle = (e) => {
-		setSelectedStyle(e.target.name);
-
 		//change the image
 		setDefaultImg({
 			...defaultImg,
 			[selected]: e.target.name,
 		});
+	};
+
+	const handleRandomize = () => {
+		const randomizedDefaultImg = { ...defaultImg };
+
+		data.forEach((item) => {
+			const shuffledFiles = item.files
+				.map((file) => file.file)
+				.sort(() => Math.random() - 0.5);
+			randomizedDefaultImg[item.folderName] = shuffledFiles[0];
+		});
+
+		setDefaultImg(randomizedDefaultImg);
+	};
+
+	const downloadDivAsImage = (divId) => {
+		const targetDiv = document.getElementById(divId);
+
+		targetDiv.style.borderRadius = "0px";
+
+		if (targetDiv) {
+			html2canvas(targetDiv)
+				.then((canvas) => {
+					const link = document.createElement("a");
+					link.href = canvas.toDataURL();
+					link.download = "Your Alpaca.png";
+					link.click();
+				})
+				.catch((error) => {
+					console.error("Error capturing div as image:", error);
+				});
+		}
+
+		targetDiv.style.borderRadius = "1rem";		
+
 	};
 
 	return (
@@ -65,7 +98,7 @@ const Home = () => {
 				<div className='mainBody'>
 					<div className='leftDiv'>
 						<div className='cont'>
-							<div className='imgDiv'>
+							<div className='imgDiv' id="captureDiv" >
 								{Object.keys(defaultImg).map((key, index) => {
 									return (
 										<img
@@ -81,7 +114,7 @@ const Home = () => {
 					<div className='rightDiv'>
 						<div className='cont'>
 							<div className='acc'>
-								<p>Accessorize the Alpaca's</p>
+								<p>Accessorize the Alpaca&apos;s</p>
 								<div className='options accessorize'>
 									{data.map((item, index) => {
 										return (
@@ -100,11 +133,11 @@ const Home = () => {
 								<p>Style</p>
 								<div className='options styling'>
 									{selected === "" ? (
-										<p style={{ fontWeight: "500", fontSize: "0.8rem" }}>
+										<p style={{ fontWeight: "500" }}>
 											Select an Accessory
 										</p>
 									) : null}
-									{data.map((item, index) => {
+									{data.map((item) => {
 										if (item.folderName === selected) {
 											return item.files.map((file, index) => {
 												return (
@@ -120,6 +153,13 @@ const Home = () => {
 											});
 										}
 									})}
+								</div>
+							</div>
+							<div className='download'>
+								<p>Export</p>
+								<div className='options'>
+									<button onClick={handleRandomize}>Randomize</button>
+									<button onClick={() => downloadDivAsImage('captureDiv')} >Download</button>
 								</div>
 							</div>
 						</div>
